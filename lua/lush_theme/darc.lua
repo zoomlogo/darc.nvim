@@ -59,15 +59,15 @@ local theme = lush(function()
     -- styling for that group (meaning they mostly get styled as Normal)
     -- or leave them commented to apply vims default colouring or linking.
 
-    -- Comment      { }, -- any comment
-    -- ColorColumn  { }, -- used for the columns set with 'colorcolumn'
+    Comment      { fg = hsl("#9db2bb"), gui = "italic" }, -- any comment
+    ColorColumn  { bg = hsl("#363636") }, -- used for the columns set with 'colorcolumn'
     -- Conceal      { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
-    -- Cursor       { }, -- character under the cursor
+    Cursor       { fg = hsl("#242424"), bg = hsl("#dddddd") }, -- character under the cursor
     -- lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     -- CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
-    -- CursorColumn { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-    -- CursorLine   { }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-    -- Directory    { }, -- directory names (and other special names in listings)
+    CursorColumn { bg = hsl("#363636") }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+    CursorLine   { bg = hsl("#363636") }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+    Directory    { fg = hsl("#cddfef") }, -- directory names (and other special names in listings)
     -- DiffAdd      { }, -- diff mode: Added line |diff.txt|
     -- DiffChange   { }, -- diff mode: Changed line |diff.txt|
     -- DiffDelete   { }, -- diff mode: Deleted line |diff.txt|
@@ -76,36 +76,36 @@ local theme = lush(function()
     -- TermCursor   { }, -- cursor in a focused terminal
     -- TermCursorNC { }, -- cursor in an unfocused terminal
     -- ErrorMsg     { }, -- error messages on the command line
-    -- VertSplit    { }, -- the column separating vertically split windows
-    -- Folded       { }, -- line used for closed folds
+    VertSplit    { fg = hsl("#bbaaaa") }, -- the column separating vertically split windows
+    Folded       { fg = hsl("#cdcdcd"), bg = hsl("#444444") }, -- line used for closed folds
     -- FoldColumn   { }, -- 'foldcolumn'
-    -- SignColumn   { }, -- column where |signs| are displayed
-    -- IncSearch    { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    SignColumn   { bg = hsl("#363636") }, -- column where |signs| are displayed
+    IncSearch    { bg = hsl("#444444") }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     -- Substitute   { }, -- |:substitute| replacement text highlighting
-    -- LineNr       { }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    -- CursorLineNr { }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-    -- MatchParen   { }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    LineNr       { fg = hsl("#bcbcbc"), bg = hsl("#363636") }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    CursorLineNr { fg = hsl("#dddddd"), bg = hsl("#363636") }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    MatchParen   { gui = "underline" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     -- ModeMsg      { }, -- 'showmode' message (e.g., "-- INSERT -- ")
     -- MsgArea      { }, -- Area for messages and cmdline
     -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     -- MoreMsg      { }, -- |more-prompt|
     -- NonText      { }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    -- Normal       { }, -- normal text
+    Normal       { fg = hsl("#dddddd"), bg = hsl("#242424") }, -- normal text
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
-    -- Pmenu        { }, -- Popup menu: normal item.
-    -- PmenuSel     { }, -- Popup menu: selected item.
-    -- PmenuSbar    { }, -- Popup menu: scrollbar.
+    Pmenu        { fg = hsl("#dddddd") }, -- Popup menu: normal item.
+    PmenuSel     { bg = hsl("#353535") }, -- Popup menu: selected item.
+    PmenuSbar    { bg = hsl("#404040") }, -- Popup menu: scrollbar.
     -- PmenuThumb   { }, -- Popup menu: Thumb of the scrollbar.
     -- Question     { }, -- |hit-enter| prompt and yes/no questions
     -- QuickFixLine { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    -- Search       { }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+    Search       { gui = "underline" }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     -- SpecialKey   { }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
     -- SpellBad     { }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
     -- SpellCap     { }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     -- SpellLocal   { }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     -- SpellRare    { }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-    -- StatusLine   { }, -- status line of current window
+    StatusLine   { fg = hsl("#d4d4d4"), bg = hsl("#444444") }, -- status line of current window
     -- StatusLineNC { }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
     -- TabLine      { }, -- tab pages line, not active tab page label
     -- TabLineFill  { }, -- tab pages line, where there are no labels
@@ -123,17 +123,17 @@ local theme = lush(function()
     -- default,
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    -- Constant       { }, -- (preferred) any constant
-    -- String         { }, --   a string constant: "this is a string"
-    -- Character      { }, --  a character constant: 'c', '\n'
-    -- Number         { }, --   a number constant: 234, 0xff
-    -- Boolean        { }, --  a boolean constant: TRUE, false
-    -- Float          { }, --    a floating point constant: 2.3e10
+    Constant       { fg = hsl("#fe8f76") }, -- (preferred) any constant
+    String         { fg = hsl("#d3d7bd") }, --   a string constant: "this is a string"
+    Character      { String }, --  a character constant: 'c', '\n'
+    Number         { Constant }, --   a number constant: 234, 0xff
+    Boolean        { Constant }, --  a boolean constant: TRUE, false
+    Float          { Constant }, --    a floating point constant: 2.3e10
 
-    -- Identifier     { }, -- (preferred) any variable name
-    -- Function       { }, -- function name (also: methods for classes)
+    Identifier     { fg = hsl("#eeffff") }, -- (preferred) any variable name
+    Function       { fg = hsl("#87aeff") }, -- function name (also: methods for classes)
 
-    -- Statement      { }, -- (preferred) any statement
+    Statement      { fg = hsl("#cd9cec") }, -- (preferred) any statement
     -- Conditional    { }, --  if, then, else, endif, switch, etc.
     -- Repeat         { }, --   for, do, while, etc.
     -- Label          { }, --    case, default, etc.
@@ -141,34 +141,34 @@ local theme = lush(function()
     -- Keyword        { }, --  any other keyword
     -- Exception      { }, --  try, catch, throw
 
-    -- PreProc        { }, -- (preferred) generic Preprocessor
+    PreProc        { fg = hsl("#ffcb3b") }, -- (preferred) generic Preprocessor
     -- Include        { }, --  preprocessor #include
     -- Define         { }, --   preprocessor #define
     -- Macro          { }, --    same as Define
     -- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
-    -- Type           { }, -- (preferred) int, long, char, etc.
+    Type           { fg = hsl("#ffea6b") }, -- (preferred) int, long, char, etc.
     -- StorageClass   { }, -- static, register, volatile, etc.
     -- Structure      { }, --  struct, union, enum, etc.
     -- Typedef        { }, --  A typedef
 
-    -- Special        { }, -- (preferred) any special symbol
+    Special        { fg = hsl("#eeef9f") }, -- (preferred) any special symbol
     -- SpecialChar    { }, --  special character in a constant
     -- Tag            { }, --    you can use CTRL-] on this
     -- Delimiter      { }, --  character that needs attention
     -- SpecialComment { }, -- special things inside a comment
     -- Debug          { }, --    debugging statements
 
-    -- Underlined { gui = "underline" }, -- (preferred) text that stands out, HTML links
-    -- Bold       { gui = "bold" },
-    -- Italic     { gui = "italic" },
+    Underlined { gui = "underline" }, -- (preferred) text that stands out, HTML links
+    Bold       { gui = "bold" },
+    Italic     { gui = "italic" },
 
     -- ("Ignore", below, may be invisible...)
     -- Ignore         { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
-    -- Error          { }, -- (preferred) any erroneous construct
+    Error          { fg = hsl("#ff3333") }, -- (preferred) any erroneous construct
 
-    -- Todo           { }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    Todo           { fg = hsl("#eefe00") }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     -- These groups are for the native LSP client. Some other LSP clients may
     -- use these groups, or use their own. Consult your LSP client's
@@ -178,8 +178,8 @@ local theme = lush(function()
     -- LspReferenceRead                     { }, -- used for highlighting "read" references
     -- LspReferenceWrite                    { }, -- used for highlighting "write" references
 
-    -- LspDiagnosticsDefaultError           { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    -- LspDiagnosticsDefaultWarning         { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultError           { Error }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultWarning         { fg = hsl("#ffa333") }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     -- LspDiagnosticsDefaultInformation     { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     -- LspDiagnosticsDefaultHint            { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
@@ -260,10 +260,14 @@ local theme = lush(function()
     -- TSTitle              { };    -- Text that is part of a title.
     -- TSLiteral            { };    -- Literal text.
     -- TSURI                { };    -- Any URI like a link or email.
+    --
+    -- Other highlights
 
+    MinimapCurrentLine { fg = hsl("#50fa7b") },
   }
 end)
 
+vim.g.minimap_highlight='MinimapCurrentLine'
 -- return our parsed theme for extension or use else where.
 return theme
 
