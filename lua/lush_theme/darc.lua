@@ -110,10 +110,10 @@ local theme = lush(function()
     -- TabLine      { }, -- tab pages line, not active tab page label
     -- TabLineFill  { }, -- tab pages line, where there are no labels
     -- TabLineSel   { }, -- tab pages line, active tab page label
-    -- Title        { }, -- titles for output from ":set all", ":autocmd" etc.
+    Title        { fg = hsl("#ffea45") }, -- titles for output from ":set all", ":autocmd" etc.
     Visual       { IncSearch }, -- Visual mode selection
     -- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
-    -- WarningMsg   { }, -- warning messages
+    WarningMsg   { fg = hsl("#ff9333") }, -- warning messages
     -- Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- WildMenu     { }, -- current match in 'wildmenu' completion
 
@@ -123,17 +123,17 @@ local theme = lush(function()
     -- default,
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    Constant       { fg = hsl("#fe8f76") }, -- (preferred) any constant
-    String         { fg = hsl("#d3d7bd") }, --   a string constant: "this is a string"
+    Constant       { fg = hsl("#de8ff6") }, -- (preferred) any constant
+    String         { fg = hsl("#c3fead") }, --   a string constant: "this is a string"
     Character      { String }, --  a character constant: 'c', '\n'
-    Number         { Constant }, --   a number constant: 234, 0xff
+    Number         { fg = hsl("#8eafff") }, --   a number constant: 234, 0xff
     Boolean        { Constant }, --  a boolean constant: TRUE, false
-    Float          { Constant }, --    a floating point constant: 2.3e10
+    Float          { Number }, --    a floating point constant: 2.3e10
 
-    Identifier     { fg = hsl("#eeffff") }, -- (preferred) any variable name
-    Function       { fg = hsl("#87aeff") }, -- function name (also: methods for classes)
+    Identifier     { fg = hsl("#eefeee") }, -- (preferred) any variable name
+    Function       { fg = hsl("#a7aeff") }, -- function name (also: methods for classes)
 
-    Statement      { fg = hsl("#cd9cec") }, -- (preferred) any statement
+    Statement      { fg = hsl("#cdacfc") }, -- (preferred) any statement
     -- Conditional    { }, --  if, then, else, endif, switch, etc.
     -- Repeat         { }, --   for, do, while, etc.
     -- Label          { }, --    case, default, etc.
@@ -141,13 +141,13 @@ local theme = lush(function()
     -- Keyword        { }, --  any other keyword
     -- Exception      { }, --  try, catch, throw
 
-    PreProc        { fg = hsl("#ffcb3b") }, -- (preferred) generic Preprocessor
+    PreProc        { fg = hsl("#ffcbfb") }, -- (preferred) generic Preprocessor
     -- Include        { }, --  preprocessor #include
     -- Define         { }, --   preprocessor #define
     -- Macro          { }, --    same as Define
     -- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
-    Type           { fg = hsl("#ffea6b") }, -- (preferred) int, long, char, etc.
+    Type           { fg = hsl("#f4af6f") }, -- (preferred) int, long, char, etc.
     -- StorageClass   { }, -- static, register, volatile, etc.
     -- Structure      { }, --  struct, union, enum, etc.
     -- Typedef        { }, --  A typedef
@@ -168,7 +168,7 @@ local theme = lush(function()
 
     Error          { fg = hsl("#ff3333") }, -- (preferred) any erroneous construct
 
-    Todo           { fg = hsl("#eefe00") }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    Todo           { fg = hsl("#eefef0") }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     -- These groups are for the native LSP client. Some other LSP clients may
     -- use these groups, or use their own. Consult your LSP client's
