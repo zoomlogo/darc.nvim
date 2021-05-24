@@ -91,8 +91,8 @@ local theme = lush(function()
     -- MoreMsg      { }, -- |more-prompt|
     -- NonText      { }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal       { fg = hsl("#dddddd"), bg = hsl("#242424") }, -- normal text
-    -- NormalFloat  { }, -- Normal text in floating windows.
-    -- NormalNC     { }, -- normal text in non-current windows
+    NormalFloat  { Normal }, -- Normal text in floating windows.
+    NormalNC     { Normal }, -- normal text in non-current windows
     Pmenu        { fg = hsl("#dddddd") }, -- Popup menu: normal item.
     PmenuSel     { bg = hsl("#353535") }, -- Popup menu: selected item.
     PmenuSbar    { bg = hsl("#404040") }, -- Popup menu: scrollbar.
@@ -114,7 +114,7 @@ local theme = lush(function()
     Visual       { IncSearch }, -- Visual mode selection
     -- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg   { fg = hsl("#ff9333") }, -- warning messages
-    -- Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+    Whitespace   { fg = hsl("#bbbbbb") }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- WildMenu     { }, -- current match in 'wildmenu' completion
 
     -- These groups are not listed as default vim groups,
@@ -166,9 +166,9 @@ local theme = lush(function()
     -- ("Ignore", below, may be invisible...)
     -- Ignore         { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
-    Error          { fg = hsl("#ff3333") }, -- (preferred) any erroneous construct
+    Error          { fg = hsl("#ff5555") }, -- (preferred) any erroneous construct
 
-    Todo           { fg = hsl("#eefef0") }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    Todo           { fg = hsl("#eeeee0") }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     -- These groups are for the native LSP client. Some other LSP clients may
     -- use these groups, or use their own. Consult your LSP client's
