@@ -61,27 +61,27 @@ local theme = lush(function()
 
     Comment      { fg = hsl("#9db2bb"), gui = "italic" }, -- any comment
     ColorColumn  { bg = hsl("#363636") }, -- used for the columns set with 'colorcolumn'
-    -- Conceal      { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+    Conceal      { fg = hsl("#eaeaff") }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor       { fg = hsl("#242424"), bg = hsl("#dddddd") }, -- character under the cursor
-    -- lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
-    -- CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
+    lCursor      { fg = hsl("#242424"), bg = hsl("#eddddd") }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
+    CursorIM     { lCursor }, -- like Cursor, but used when in IME mode |CursorIM|
     CursorColumn { bg = hsl("#363636") }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine   { bg = hsl("#363636") }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory    { fg = hsl("#cddfef") }, -- directory names (and other special names in listings)
-    -- DiffAdd      { }, -- diff mode: Added line |diff.txt|
-    -- DiffChange   { }, -- diff mode: Changed line |diff.txt|
-    -- DiffDelete   { }, -- diff mode: Deleted line |diff.txt|
-    -- DiffText     { }, -- diff mode: Changed text within a changed line |diff.txt|
-    EndOfBuffer  { Comment }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-    -- TermCursor   { }, -- cursor in a focused terminal
+    DiffAdd      { fg = hsl("#242424"), bg = hsl("#88ff88") }, -- diff mode: Added line |diff.txt|
+    DiffChange   { fg = hsl("#242424"), bg = hsl("#ffdd88")}, -- diff mode: Changed line |diff.txt|
+    DiffDelete   { fg = hsl("#242424"), bg = hsl("#ff8888")}, -- diff mode: Deleted line |diff.txt|
+    DiffText     { DiffChange }, -- diff mode: Changed text within a changed line |diff.txt|
+    EndOfBuffer  { fg = hsl("#888888") }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+    TermCursor   { Cursor }, -- cursor in a focused terminal
     -- TermCursorNC { }, -- cursor in an unfocused terminal
-    -- ErrorMsg     { }, -- error messages on the command line
+    ErrorMsg     { fg = hsl("#ffffff"), bg = hsl("#ff8888") }, -- error messages on the command line
     VertSplit    { fg = hsl("#bbaaaa") }, -- the column separating vertically split windows
     Folded       { fg = hsl("#cdcdcd"), bg = hsl("#444444") }, -- line used for closed folds
-    -- FoldColumn   { }, -- 'foldcolumn'
+    FoldColumn   { Folded }, -- 'foldcolumn'
     SignColumn   { bg = hsl("#363636") }, -- column where |signs| are displayed
     IncSearch    { bg = hsl("#444444") }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-    -- Substitute   { }, -- |:substitute| replacement text highlighting
+    Substitute   { IncSearch }, -- |:substitute| replacement text highlighting
     LineNr       { fg = hsl("#bcbcbc"), bg = hsl("#363636") }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr { fg = hsl("#dddddd"), bg = hsl("#363636") }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen   { gui = "underline" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -166,7 +166,7 @@ local theme = lush(function()
     -- ("Ignore", below, may be invisible...)
     -- Ignore         { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
-    Error          { fg = hsl("#ff5555") }, -- (preferred) any erroneous construct
+    Error          { fg = hsl("#ff8888") }, -- (preferred) any erroneous construct
 
     Todo           { fg = hsl("#eeeee0") }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
@@ -179,9 +179,9 @@ local theme = lush(function()
     -- LspReferenceWrite                    { }, -- used for highlighting "write" references
 
     LspDiagnosticsDefaultError           { Error }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultWarning         { fg = hsl("#ffa333") }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    -- LspDiagnosticsDefaultInformation     { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    -- LspDiagnosticsDefaultHint            { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultWarning         { fg = hsl("#ffdd88") }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultInformation     { fg = hsl("#4dd9f7") }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultHint            { fg = hsl("#50f9c1") }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
     -- LspDiagnosticsVirtualTextError       { }, -- Used for "Error" diagnostic virtual text
     -- LspDiagnosticsVirtualTextWarning     { }, -- Used for "Warning" diagnostic virtual text
