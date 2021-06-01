@@ -61,7 +61,7 @@ local theme = lush(function()
 
     Comment      { fg = hsl("#9db2bb"), gui = "italic" }, -- any comment
     ColorColumn  { bg = hsl("#363636") }, -- used for the columns set with 'colorcolumn'
-    Conceal      { fg = hsl("#eaeaff") }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+    Conceal      { fg = hsl("#efeeee") }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor       { fg = hsl("#242424"), bg = hsl("#dddddd") }, -- character under the cursor
     lCursor      { fg = hsl("#242424"), bg = hsl("#eddddd") }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     CursorIM     { lCursor }, -- like Cursor, but used when in IME mode |CursorIM|
@@ -74,7 +74,7 @@ local theme = lush(function()
     DiffText     { DiffChange }, -- diff mode: Changed text within a changed line |diff.txt|
     EndOfBuffer  { fg = hsl("#888888") }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     TermCursor   { Cursor }, -- cursor in a focused terminal
-    -- TermCursorNC { }, -- cursor in an unfocused terminal
+    TermCursorNC { Cursor }, -- cursor in an unfocused terminal
     ErrorMsg     { fg = hsl("#ffffff"), bg = hsl("#ff8888") }, -- error messages on the command line
     VertSplit    { fg = hsl("#bbaaaa") }, -- the column separating vertically split windows
     Folded       { fg = hsl("#cdcdcd"), bg = hsl("#444444") }, -- line used for closed folds
