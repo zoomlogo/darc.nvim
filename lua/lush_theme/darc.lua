@@ -85,7 +85,7 @@ local theme = lush(function()
     LineNr       { fg = hsl("#bcbcbc"), bg = hsl("#363636") }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr { fg = hsl("#dddddd"), bg = hsl("#363636") }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen   { gui = "underline" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-    -- ModeMsg      { }, -- 'showmode' message (e.g., "-- INSERT -- ")
+    ModeMsg      { CursorLineNr }, -- 'showmode' message (e.g., "-- INSERT -- ")
     -- MsgArea      { }, -- Area for messages and cmdline
     -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     -- MoreMsg      { }, -- |more-prompt|
@@ -114,7 +114,7 @@ local theme = lush(function()
     Visual       { IncSearch }, -- Visual mode selection
     -- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg   { fg = hsl("#ff9333") }, -- warning messages
-    Whitespace   { fg = hsl("#bbbbbb") }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+    Whitespace   { fg = hsl("#545454") }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- WildMenu     { }, -- current match in 'wildmenu' completion
 
     -- These groups are not listed as default vim groups,
